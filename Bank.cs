@@ -8,13 +8,13 @@ namespace GHNRBank
 {
     public class Bank
     {
-        private User[] users = new User[100]; // Fixed-size user array
+        private User[] users = new User[100]; // Fixed-size user array of 100
         private int userCount = 0;            // Tracks current user total
 
         // Default constructor: creates a test user
         public Bank()
         {
-            users[userCount] = new User
+            users[userCount] = new User // added user in the user array at position userCount
             {
                 Username = "Joe.Doe",
                 Email = "joe.doe@example.com",
@@ -49,7 +49,7 @@ namespace GHNRBank
             if (username == "" || email == "" || ageInput == "" || phone == "" || password == "")
             {
                 Console.WriteLine("All fields are required. Please try again.");
-                return;
+                return; 
             }
 
             // Manual parsing of age
@@ -104,11 +104,11 @@ namespace GHNRBank
                 Console.Write("Enter password: ");
                 string password = Console.ReadLine();
 
-                bool isFound = false;
+                bool isFound = false; // we assumed user with this email and password not found.
 
                 for (int i = 0; i < userCount; i++)
                 {
-                    if (users[i].Email == email && users[i].Password == password)
+                    if (users[i].Email == email && users[i].Password == password) // checked the user with email exists in user array.
                     {
                         Console.WriteLine($"\nLogin Successful. Welcome, {users[i].Username}!");
                         ShowMainMenu();

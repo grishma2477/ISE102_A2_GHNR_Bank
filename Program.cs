@@ -9,7 +9,7 @@ namespace GHNRBank
     {
         static void Main(string[] args)
         {
-            Bank bank = new Bank();
+            Bank bank = new Bank(); // created bank object
 
             while (true)
             {
@@ -18,7 +18,7 @@ namespace GHNRBank
                 Console.WriteLine("2: Signup");
                 Console.WriteLine("3: Quit");
                 Console.Write("\nSelect Option: ");
-                string option = Console.ReadLine();
+                string option = Console.ReadLine(); // asked for option 1, 2, 3 
 
                 // Using switch statement for main menu
                 switch (option)
